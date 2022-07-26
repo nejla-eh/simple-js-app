@@ -2,7 +2,7 @@
 
 ## Intro
 A small web application using HTML, CSS, and JavaScript that loads
-data from an external API [Pokémon API](https://pokeapi.co/).
+data from the [Pokémon API](https://pokeapi.co/).
 
 ## Technology stack
 The following technologies are used:
