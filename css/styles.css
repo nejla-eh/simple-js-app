@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.pokemonList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pokemon,
+.pokemon--big {
+    display: flex;
+    flex: 0 0 30%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.pokemon {
+    background-color: beige;
+}
+
+.pokemon--big {
+    background-color: orange;
+}
+
+@media all and (max-width: 720px) {
+
+    .pokemon,
+    .pokemon--big {
+        flex: 0 0 45%;
+    }
+}
