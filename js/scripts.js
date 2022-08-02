@@ -60,35 +60,34 @@ const pokemonRepository = (function () {
         });
     };
 
-    return { add, getAll, filter };
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
+
+    function buttonEvent(buttonEl, pokemon) {
+        buttonEl.addEventListener('click', function () {
+            showDetails(pokemon);
+        })
+    }
+
+    function addListItem(pokemon) {
+        const pokemonList = document.querySelector('.pokemon-list');
+        const listItem = document.createElement('li');
+        const button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('my-button');
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+        buttonEvent(button, pokemon);
+    }
+
+
+    return { getAll, addListItem };
 })();
 
-// These pokemons should not be added, should throw errors
-pokemonRepository.add({ name: 'Pikachu' });
-pokemonRepository.add({ name: 23 });
-pokemonRepository.add({ name: 'Pikachu1', height: 0.4, type: [] });
-pokemonRepository.add({ name: 'Pikachu', height: 0.4, type: [23, 'flying'] });
-
-// These pokemons should be added
-pokemonRepository.add({ name: 'Pikachu', height: 0.4, type: ['electric'] });
-pokemonRepository.add({ name: 'Snorflax', height: 2.1, type: ['normal'] });
-
-console.log(pokemonRepository.filter('Bulbasaur'));
-console.log(pokemonRepository.filter('Bulbasaur1'));
-
-console.log(pokemonRepository.getAll());
+// console.log(pokemonRepository.getAll());
 
 // Rendering DOM
-document.write('<div class="pokemonList">');
 pokemonRepository.getAll().forEach(function (pokemon) {
-    if (pokemon.height > 1.7) {
-        document.write('<div class="pokemon--big">');
-        document.write(pokemon.name + " (height: " + pokemon.height + ")");
-        document.write(' - Wow, that\'s big!');
-    } else {
-        document.write('<div class="pokemon">');
-        document.write(pokemon.name + " (height: " + pokemon.height + ")");
-    }
-    document.write('</div>');
-})
-document.write('</div>');
+    pokemonRepository.addListItem(pokemon);
+});
