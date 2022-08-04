@@ -41,7 +41,7 @@ const pokemonRepository = (function () {
             const navigateRightElement = document.createElement('div');
             navigateRightElement.classList.add('pokemon-nav');
             if (getPokemonIndex(pokemon) === pokemonList.length - 1) {
-                navigateLeftElement.classList.add('pokemon-nav--disabled');
+                navigateRightElement.classList.add('pokemon-nav--disabled');
             }
             navigateRightElement.innerText = 'Next';
             navigateRightElement.addEventListener('click', () => loadNextPokemon(pokemon));
