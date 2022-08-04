@@ -57,6 +57,7 @@ const pokemonRepository = (function () {
 
             const pictureElement = document.createElement('img');
             pictureElement.src = pokemon.imageUrl;
+            pictureElement.style.width = '300px';
 
             const contentElement = document.createElement('p');
             contentElement.innerText = 'Height: ' + pokemon.height / 10 + 'm';
@@ -137,7 +138,7 @@ const pokemonRepository = (function () {
         return fetch(pokemon.detailsUrl).then(function (response) {
             return response.json();
         }).then(function (details) {
-            pokemon.imageUrl = details.sprites.front_default;
+            pokemon.imageUrl = details.sprites.other.dream_world.front_default;
             pokemon.height = details.height;
             pokemon.types = details.types;
             hideLoadingMessage();
