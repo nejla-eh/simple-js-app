@@ -1,7 +1,7 @@
 # Pokédex App
 
 ## Intro
-A small web application using HTML, CSS, and JavaScript that loads
+[A small web application](https://nejla-eh.github.io/simple-js-app/) using HTML, CSS, and JavaScript that loads
 data from the [Pokémon API](https://pokeapi.co/).
 
 ## Technology stack
