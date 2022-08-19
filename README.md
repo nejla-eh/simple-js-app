@@ -8,4 +8,5 @@ data from the [Pokémon API](https://pokeapi.co/).
 The following technologies are used:
 - HTML
 - CSS
+- Bootstrap
 - JavaScript
